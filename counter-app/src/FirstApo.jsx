@@ -11,6 +11,6 @@ export const FirstApo = ({title, subTitle}) => {
 }
 
 FirstApo.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   subTitle: PropTypes.string,
 }
