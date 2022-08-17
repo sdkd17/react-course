@@ -9,6 +9,6 @@ import './styles.css'
 ReactDOM.createRoot( document.getElementById( 'root' ) ). render (
   <React.StrictMode>
     {/* <FirstApo title={"Titulo"} subTitle={"subtitulo"}/> */}
-    <CounterApp value={8}/>
+    <CounterApp value={100}/>
   </React.StrictMode>
 )
