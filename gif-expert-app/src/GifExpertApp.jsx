@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
+import { GifGrid } from "./components/GifGrid";
 
 function camelize(str) {
   return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function(match, index) {
@@ -29,13 +30,17 @@ export const GifExpertApp = () => {
 			/>
 			{/* set categories manda categories como parametro implicito */}
 			
-			<ol>
-				{ 
-					categories.map( category => {
-						return <li key={category}>{ camelize(category) }</li>
-					}		
-				)}
-			</ol>
+			
+      { 
+        categories.map( category => 
+          ( <GifGrid 
+              category={ category }
+              key={ category }
+            />
+          )
+        )
+      }
+			
 		</>
 	)
 }
