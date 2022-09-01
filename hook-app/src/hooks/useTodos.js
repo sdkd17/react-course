@@ -4,16 +4,14 @@ import { todoReducer } from '../08-useReducer/todoReducer';
 export const useTodos = () => {
   
   const init = () => {
-    return JSON.parse( localStorage.getItem( 'todoState' ) ) || {todos: [], todosCount: 0, pendingTodosCount: 0};
+    return JSON.parse( localStorage.getItem( 'todos' ) ) || [];
   }
    
-  const [ todoState, dispatch ] = useReducer( todoReducer, {todos: [], todosCount: 0, pendingTodosCount: 0}, init );
+  const [ todos, dispatch ] = useReducer( todoReducer, [], init )
   
-  const { todos, todosCount, pendingTodosCount } = todoState;
-
   useEffect(() => {
-    localStorage.setItem( 'todoState', JSON.stringify(todoState) );
-  }, [ todoState ]);
+    localStorage.setItem( 'todos', JSON.stringify(todos) );
+  }, [ todos ]);
   
 
   const onNewTodo = ( todo ) => {
@@ -36,24 +34,24 @@ export const useTodos = () => {
     const action = {
       type: '[TODO] delete todo',
       payload: id
-    };
+    }
 
     dispatch( action );
-  };
+  }
 
   const onDoneItem = ( id ) => {
     dispatch({
       type: '[TODO] done todo',
       payload: id
     });
-  };
+  }
   
   return {
     todos,
-    todosCount,
-    pendingTodosCount, 
+    todosCount: todos.length,
+    pendingTodosCount: todos.filter( todo => !todo.done ).length, 
     onNewTodo,
     onDeleteItem,
     onDoneItem,
-  };
+  }
 }
