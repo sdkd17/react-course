@@ -6,7 +6,12 @@ export const TodoItem = ({ item, onDeleteItem, onDoneItem }) => {
 
   return (
     <li className={`list-group-item d-flex justify-content-between ${ done? 'list-group-item-success' : ''}`}>
-      <span className="align-self-center">{ todo }</span>
+      <span 
+        className="align-self-center"
+        aria-label='span-label'
+      >
+        { todo }
+      </span>
       <div className="btn-group">
         <button
           className={"btn btn-secondary"}
