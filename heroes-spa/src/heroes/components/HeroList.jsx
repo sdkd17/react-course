@@ -7,7 +7,7 @@ export const HeroList = ({ publisher }) => {
 
   //Solo se dispara getHeroBy... cuando el publisher cambia
   const heroes = useMemo( () =>  getHeroesByPublisher( publisher ), [ publisher ]);
-  console.log( publisher )
+  
   return (
     <div className="row rows-cols-1 row-cols-md-3 g-3">
       {
