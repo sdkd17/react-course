@@ -63,7 +63,7 @@ export const Navbar = () => {
           <span 
             className="nav-item nav-link text-primary"
           >
-           { state.user?.name }
+           { state?.user?.name }
           </span>
 
           <button
