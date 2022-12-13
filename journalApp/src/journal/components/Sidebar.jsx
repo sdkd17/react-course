@@ -2,7 +2,7 @@ import { TurnedInNot } from "@mui/icons-material"
 import { Grid, Drawer, Box, Toolbar, Typography, Divider, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material"
 
 
-export const Sidebar = ({ drawerWidth }) => {
+export const Sidebar = ({ drawerWidth = 240}) => {
   return (
     <Box
       component='nav'
@@ -15,8 +15,10 @@ export const Sidebar = ({ drawerWidth }) => {
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth }
         }}
       >
-        <Toolbar >
-          <Typography variant='h6' noWrap component='div'>Nombre Apellido</Typography>
+        <Toolbar>
+          <Typography variant='h6' noWrap component='div'>
+            Nombre Apellido
+          </Typography>
         </Toolbar>
 
         <Divider />

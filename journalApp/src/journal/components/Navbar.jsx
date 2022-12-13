@@ -22,7 +22,7 @@ export const Navbar = ({drawerWidth = 240 }) => {
         <Grid
           container
           direction='row'
-          justifyContent='space-around'
+          justifyContent='space-between'
           alignItems='center'
         >
           <Typography variant='h6' noWrap component='div'>JournalApp</Typography>
